@@ -1,0 +1,11 @@
+services:
+  sway-worklog:
+    image: ghcr.io/sglre6355/sway-worklog:latest
+    container_name: sway-worklog
+    restart: unless-stopped
+    environment:
+      - SWAYSOCK=${SWAYSOCK}
+    volumes:
+      - ${SWAYSOCK}:${SWAYSOCK}
+      - ${HOME}/.config/sway-worklog:/root/.config/sway-worklog:ro
+      - ${HOME}/.local/share/sway-worklog:/root/.local/share/sway-worklog
