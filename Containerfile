@@ -10,4 +10,5 @@ RUN --mount=type=bind,source=src,target=src \
 
 FROM gcr.io/distroless/cc
 COPY --from=build-env /app/sway-worklog /
-CMD ["./sway-worklog"]
+ENTRYPOINT ["./sway-worklog"]
+CMD ["daemon"]
