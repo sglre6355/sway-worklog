@@ -15,6 +15,7 @@ struct Session {
 }
 
 pub fn run(config: &Config) -> Result<()> {
+    eprintln!("sway-worklog daemon starting");
     let log_path = config.log_path()?;
 
     let shutdown = Arc::new(AtomicBool::new(false));
@@ -118,6 +119,7 @@ pub fn run(config: &Config) -> Result<()> {
         }
     }
 
+    eprintln!("sway-worklog daemon stopped");
     Ok(())
 }
 
